@@ -1,0 +1,198 @@
+body {
+  background: url("https://wallpapers-clan.com/wp-content/uploads/2024/04/butterflies-pink-clouds-gif-desktop-wallpaper-preview.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: 'Playfair Display', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.birthday-gift {
+  position: relative;
+}
+
+.birthday-gift:before {
+  content: "";
+  position: absolute;
+  width: 270px; /* Wider shadow */
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  top: 160px;
+  left: -10px;
+}
+
+input#click {
+  display: none;
+}
+
+.gift {
+  position: relative;
+  width: 380px; /* Increased width */
+  height: 280px;
+  background-color: #f7e7ce;
+  border: 3px solid #d4af37;
+  border-radius: 8px;
+  text-align: center;
+  top: 120px;
+}
+
+.gift:before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 280px;
+  background-color: #d4af37;
+  left: 157px; /* Centered ribbon */
+}
+
+.gift:after {
+  content: "";
+  position: absolute;
+  /* box-shadow: inset 0 10px rgba(0, 0, 0, 0.1); */
+  width: 380px;
+  height: 280px;
+}
+
+.click {
+  position: absolute;
+  background-color: #f7e7ce;
+  border: 3px solid #d4af37;
+  width: 400px; /* Match shadow width */
+  height: 40px;
+  top: -40px;
+  left: -10px;
+  transform-origin: bottom left;
+  transition: 0.3s;
+  cursor: pointer;
+  border-radius: 6px 6px 0 0;
+}
+
+.click:before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 40px;
+  background-color: #d4af37;
+  left: 165px; /* Centered ribbon on lid */
+}
+
+.click:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: -1px;
+  border-bottom: 30px solid #d4af37;
+  border-top: 30px solid #d4af37;
+  border-left: 0px solid transparent;
+  border-right: 30px solid transparent;
+  transform: rotate(-90deg);
+  left: 164px; /* Adjusted for center */
+  top: -55px;
+}
+
+#click:checked + .click {
+  transform: rotate(-110deg) scaleX(0.85);
+}
+
+
+.wishes {
+  position: absolute;
+  transition: 0.5s;
+  color: #7f6da2;
+  font-size: 11.7px; /* Increased font size */
+  width: 100%; /* Full width to center text */
+  text-align: left;
+  z-index: -1;
+  top: 25px; /* Lowered slightly for better vertical centering */
+  left: 0; /* Align with full width */
+  font-family: 'Dancing Script', cursive;
+  font-weight: bold;
+}
+
+#click:checked ~ .wishes {
+  transform: translateY(-280px);
+}
+
+
+/* Decorative cats coming out of the box */
+.cats {
+  position: absolute;
+  display: none;
+  top: -30px;
+  left: 20px;
+  z-index: 1;
+}
+
+.cat {
+  width: 50px;
+  position: absolute;
+  opacity: 0;
+  animation: floatUp 2s ease-in-out forwards;
+}
+
+.cat1 { left: 0; animation-delay: 0s; }
+.cat2 { left: 130px; animation-delay: 0.3s; }
+.cat3 { left: 260px; animation-delay: 0.6s; }
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120px);
+    opacity: 0;
+  }
+}
+
+#click:checked ~ .cats {
+  display: block;
+}
+
+/* Emoji sprouting */
+#emoji-container {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  width: 150px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.emoji {
+  position: absolute;
+  font-size: 18px;
+  animation: floatEmoji 3s ease-out forwards;
+}
+
+@keyframes floatEmoji {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120px) scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Gift label */
+.gift-label {
+  position: absolute;
+  bottom: 135px; /* Slightly adjusted spacing */
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 30px; /* Increased font size */
+  color: #c29dde;
+  font-weight: bold;
+}
